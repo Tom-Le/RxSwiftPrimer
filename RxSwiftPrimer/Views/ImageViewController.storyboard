@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l2s-ER-yeR">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image View Controller-->
+        <scene sceneID="lZh-YX-Tqm">
+            <objects>
+                <viewController id="l2s-ER-yeR" customClass="ImageViewController" customModule="RxSwiftPrimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uXN-qJ-xlZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3gi-xz-jaI">
+                                <rect key="frame" x="16" y="20" width="296" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5UJ-nn-WZ9"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVk-yS-ZNy">
+                                <rect key="frame" x="320" y="20" width="39" height="30"/>
+                                <state key="normal" title="Fetch"/>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="s1A-Nd-ZCu">
+                                <rect key="frame" x="177" y="342" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6k8-FP-3JJ">
+                                <rect key="frame" x="16" y="58" width="343" height="589"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3gi-xz-jaI" firstAttribute="top" secondItem="X0t-Fp-6AY" secondAttribute="top" id="01f-pO-j0b"/>
+                            <constraint firstItem="X0t-Fp-6AY" firstAttribute="trailing" secondItem="6k8-FP-3JJ" secondAttribute="trailing" constant="16" id="1xE-Fu-TrW"/>
+                            <constraint firstItem="vVk-yS-ZNy" firstAttribute="leading" secondItem="3gi-xz-jaI" secondAttribute="trailing" constant="8" id="4dU-he-977"/>
+                            <constraint firstItem="6k8-FP-3JJ" firstAttribute="top" secondItem="3gi-xz-jaI" secondAttribute="bottom" constant="8" id="8Ic-cp-feh"/>
+                            <constraint firstItem="X0t-Fp-6AY" firstAttribute="trailing" secondItem="vVk-yS-ZNy" secondAttribute="trailing" constant="16" id="FYR-3T-V4T"/>
+                            <constraint firstItem="X0t-Fp-6AY" firstAttribute="bottom" secondItem="6k8-FP-3JJ" secondAttribute="bottom" constant="20" id="Q9u-PA-BuV"/>
+                            <constraint firstItem="6k8-FP-3JJ" firstAttribute="leading" secondItem="X0t-Fp-6AY" secondAttribute="leading" constant="16" id="T3I-ME-IIv"/>
+                            <constraint firstItem="s1A-Nd-ZCu" firstAttribute="centerY" secondItem="6k8-FP-3JJ" secondAttribute="centerY" id="cmp-og-QU2"/>
+                            <constraint firstItem="s1A-Nd-ZCu" firstAttribute="centerX" secondItem="6k8-FP-3JJ" secondAttribute="centerX" id="hMA-Fa-M7T"/>
+                            <constraint firstItem="vVk-yS-ZNy" firstAttribute="top" secondItem="X0t-Fp-6AY" secondAttribute="top" id="iab-wa-fr7"/>
+                            <constraint firstItem="3gi-xz-jaI" firstAttribute="leading" secondItem="X0t-Fp-6AY" secondAttribute="leading" constant="16" id="kDU-q0-iCh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X0t-Fp-6AY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="s1A-Nd-ZCu" id="dwp-fw-Iqj"/>
+                        <outlet property="fetchButton" destination="vVk-yS-ZNy" id="4is-E1-VdG"/>
+                        <outlet property="imageView" destination="6k8-FP-3JJ" id="hoV-qf-TFK"/>
+                        <outlet property="urlTextField" destination="3gi-xz-jaI" id="oRJ-oA-YRu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Eq-XY-IpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39.200000000000003" y="84.107946026986511"/>
+        </scene>
+    </scenes>
+</document>
