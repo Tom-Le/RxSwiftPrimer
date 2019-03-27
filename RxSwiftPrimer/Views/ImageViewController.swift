@@ -35,7 +35,14 @@ final class ImageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Set up bindings from view model observables to UI elements
-        // and from UI events to view model observers here.
+        viewModel.image.bind(to: imageView.rx.image).disposed(by: bag)
+        viewModel.isInputEnabled.bind(to: fetchButton.rx.isEnabled).disposed(by: bag)
+        viewModel.isInputEnabled.bind(to: urlTextField.rx.isEnabled).disposed(by: bag)
+        viewModel.isIndicatorActive.bind(to: activityIndicator.rx.isAnimating).disposed(by: bag)
+        Observable.of(fetchButton.rx.tap, urlTextField.rx.controlEvent(.editingDidEndOnExit))
+            .merge()
+            .withLatestFrom(urlTextField.rx.text)
+            .bind(to: viewModel.urlInput)
+            .disposed(by: bag)
     }
 }

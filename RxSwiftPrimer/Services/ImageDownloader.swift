@@ -20,9 +20,24 @@ final class ImageDownloader: ImageDownloading {
     }
 
     func getImage(at url: URL) -> Observable<UIImage> {
-        // Replace this method with one that returns an observable that downloads the image
-        // at the given URL on subscription.
-        return Observable.error(Error.invalidData)
+        return Observable.create { (observer) in
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let error = error {
+                    observer.onError(Error.other(error))
+                    return
+                }
+                guard let data = data, let image = UIImage(data: data) else {
+                    observer.onError(Error.invalidData)
+                    return
+                }
+                observer.onNext(image)
+                observer.onCompleted()
+            }
+            task.resume()
+            return Disposables.create {
+                task.cancel()
+            }
+        }
     }
 }
 
