@@ -169,7 +169,6 @@
 				B41D3D152087AAF10026E71A /* Frameworks */,
 				B41D3D162087AAF10026E71A /* Resources */,
 				30C305270A9582221C1E908F /* [CP] Embed Pods Frameworks */,
-				CD531D9EF7511E5ADDC92F3C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,7 +188,6 @@
 				B41D3D292087AAF10026E71A /* Frameworks */,
 				B41D3D2A2087AAF10026E71A /* Resources */,
 				8B968CF4BE79C5520DE03780 /* [CP] Embed Pods Frameworks */,
-				5FC35246B68474BAC8B31542 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,12 +316,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftPrimer/Pods-RxSwiftPrimer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
@@ -331,21 +331,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftPrimer/Pods-RxSwiftPrimer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5FC35246B68474BAC8B31542 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftPrimerTests/Pods-RxSwiftPrimerTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6A9D41DF5C5F84FBE9B74782 /* [CP] Check Pods Manifest.lock */ = {
@@ -373,32 +358,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftPrimerTests/Pods-RxSwiftPrimerTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftPrimerTests/Pods-RxSwiftPrimerTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CD531D9EF7511E5ADDC92F3C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftPrimer/Pods-RxSwiftPrimer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

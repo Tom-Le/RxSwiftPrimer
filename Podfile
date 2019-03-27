@@ -1,8 +1,7 @@
 platform :ios, '11.0'
+use_frameworks!
 
 target 'RxSwiftPrimer' do
-  use_frameworks!
-
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxSwiftExt'
